@@ -1,0 +1,225 @@
+<div class="feature">
+
+<div class="feature_icon">
+💰
+</div>
+
+<div>
+
+<strong>
+Valuation
+</strong>
+
+<p>
+Learn about P/E, EPS and other important metrics.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature_icon">
+🇬🇭
+</div>
+
+<div>
+
+<strong>
+Ghana Stock Market
+</strong>
+
+<p>
+Understand what is happening on the GSE.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<button class="main_button" onclick="nextScreen()">
+I WANT ACCESS →
+</button>
+
+</div>
+
+</section>
+
+
+<!-- SCREEN 5 -->
+
+<section class="screen" id="screen5">
+
+<div class="container">
+
+<div class="tag">
+YOUR NEXT STEP
+</div>
+
+<h2>
+DISCOVER WHAT IS
+<span>HAPPENING IN THE MARKET.</span>
+</h2>
+
+<p class="description">
+Continue learning about stocks, companies and the Ghanaian investment market.
+</p>
+
+<div class="vault">
+
+<div class="vault_icon">
+🔐
+</div>
+
+<h3>
+YOUR INVESTMENT COMMUNITY
+</h3>
+
+<p class="description">
+Join the Telegram community and continue the conversation.
+</p>
+
+</div>
+
+<a
+href="https://t.me/SNYstocksvault"
+target="_blank"
+class="telegram_button"
+>
+JOIN THE COMMUNITY →
+</a>
+
+<p class="small">
+You will discover S.N.Y Stocks Vault inside the community.
+</p>
+
+<button class="secondary_button" onclick="nextScreen()">
+I WANT PERSONAL GUIDANCE
+</button>
+
+</div>
+
+</section>
+
+
+<!-- SCREEN 6 -->
+
+<section class="screen" id="screen6">
+
+<div class="container">
+
+<div class="tag">
+PERSONAL GUIDANCE
+</div>
+
+<h2>
+HAVE QUESTIONS
+<span>ABOUT INVESTING?</span>
+</h2>
+
+<p class="description">
+If you want to discuss your investment questions privately, speak with us directly on WhatsApp.
+</p>
+
+<a
+href="https://wa.me/233532846270?text=Hi%2C%20I%20came%20from%20the%20investment%20funnel%20and%20I%20would%20like%20to%20discuss%20investing."
+target="_blank"
+class="whatsapp_button"
+>
+💬 CHAT ON WHATSAPP
+</a>
+
+<a
+href="https://t.me/SNYstocksvault"
+target="_blank"
+class="telegram_button"
+>
+JOIN THE TELEGRAM COMMUNITY
+</a>
+
+<p class="disclaimer">
+Investment involves risk. This page is for educational purposes and does not guarantee investment returns.
+</p>
+
+</div>
+
+</section>
+
+
+<script>
+
+let currentScreen = 1;
+
+function nextScreen() {
+
+    if (currentScreen < 6) {
+
+        currentScreen++;
+
+        document.querySelectorAll(".screen").forEach(function(screen) {
+
+            screen.classList.remove("active");
+
+        });
+
+        document
+        .getElementById("screen" + currentScreen)
+        .classList.add("active");
+
+        document
+        .getElementById("progress")
+        .style.width = ((currentScreen / 6) * 100) + "%";
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    }
+
+}
+
+
+function calculate(amount, button) {
+
+    document.querySelectorAll(".amount").forEach(function(item) {
+
+        item.classList.remove("selected");
+
+    });
+
+    button.classList.add("selected");
+
+
+    const increase = 0.75;
+
+    const profit = amount * increase;
+
+    const finalValue = amount + profit;
+
+
+    document.getElementById("result").textContent =
+        "GHS " +
+        finalValue.toLocaleString("en GH", {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
+
+
+    document.getElementById("profit").textContent =
+        "Potential increase: GHS " +
+        profit.toLocaleString("en GH", {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
+
+}
+
+</script>
+
+</body>
+  </html>
