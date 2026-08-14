@@ -1,225 +1,767 @@
-<div class="feature">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
 
-<div class="feature_icon">
-💰
-</div>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<div>
+<meta name="description" content="Learn how investing in Ghanaian companies can help you build wealth over time.">
 
-<strong>
-Valuation
-</strong>
+<title>S.N.Y Stocks Vault | Ghana Investment Community</title>
 
-<p>
-Learn about P/E, EPS and other important metrics.
-</p>
+<style>
 
-</div>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-</div>
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #07130d;
+    color: #ffffff;
+    line-height: 1.6;
+}
 
+.page {
+    width: 100%;
+    max-width: 520px;
+    margin: auto;
+    overflow: hidden;
+}
 
-<div class="feature">
+.hero {
+    min-height: 100vh;
+    padding: 28px 20px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background:
+        radial-gradient(circle at top right, rgba(255, 193, 7, 0.18), transparent 35%),
+        radial-gradient(circle at bottom left, rgba(0, 170, 90, 0.18), transparent 35%),
+        #07130d;
+}
 
-<div class="feature_icon">
-🇬🇭
-</div>
+.logo {
+    text-align: center;
+    margin-bottom: 28px;
+}
 
-<div>
+.logo span {
+    display: inline-block;
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 8px 15px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #f6c343;
+}
 
-<strong>
-Ghana Stock Market
-</strong>
+.badge {
+    text-align: center;
+    color: #f6c343;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 14px;
+}
 
-<p>
-Understand what is happening on the GSE.
-</p>
+h1 {
+    text-align: center;
+    font-size: 36px;
+    line-height: 1.1;
+    margin-bottom: 18px;
+}
 
-</div>
+h1 strong {
+    color: #f6c343;
+}
 
-</div>
+.heroText {
+    text-align: center;
+    color: #c9d3cd;
+    font-size: 16px;
+    margin-bottom: 25px;
+}
 
-</div>
+.highlight {
+    background: rgba(246, 195, 67, 0.1);
+    border: 1px solid rgba(246, 195, 67, 0.3);
+    border-radius: 18px;
+    padding: 20px;
+    margin-bottom: 22px;
+}
 
-<button class="main_button" onclick="nextScreen()">
-I WANT ACCESS →
-</button>
+.highlightTitle {
+    color: #f6c343;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 7px;
+}
 
-</div>
+.highlightText {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.primaryButton {
+    width: 100%;
+    border: none;
+    border-radius: 14px;
+    padding: 17px 20px;
+    background: #f6c343;
+    color: #07130d;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.primaryButton:active {
+    transform: scale(0.97);
+}
+
+.secondaryButton {
+    width: 100%;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 14px;
+    padding: 16px 20px;
+    background: rgba(255,255,255,0.05);
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    margin-top: 12px;
+}
+
+.section {
+    padding: 55px 20px;
+    background: #0b1c13;
+}
+
+.section.dark {
+    background: #07130d;
+}
+
+.sectionTag {
+    color: #f6c343;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 28px;
+    line-height: 1.15;
+    margin-bottom: 15px;
+}
+
+.sectionText {
+    color: #bac6bf;
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+
+.calculator {
+    background: #10261a;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    padding: 22px;
+}
+
+label {
+    display: block;
+    color: #c9d3cd;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: #07130d;
+    color: #ffffff;
+    font-size: 18px;
+    outline: none;
+    margin-bottom: 15px;
+}
+
+input:focus {
+    border-color: #f6c343;
+}
+
+.result {
+    display: none;
+    margin-top: 18px;
+    padding: 18px;
+    border-radius: 15px;
+    background: rgba(45, 190, 110, 0.1);
+    border: 1px solid rgba(45, 190, 110, 0.3);
+}
+
+.resultLabel {
+    color: #aebbb4;
+    font-size: 13px;
+}
+
+.resultAmount {
+    color: #54d98b;
+    font-size: 32px;
+    font-weight: bold;
+    margin: 3px 0;
+}.resultGain {
+    color: #54d98b;
+    font-size: 14px;
+}
+
+.note {
+    color: #89968f;
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+.exampleGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.example {
+    background: #10261a;
+    border-radius: 15px;
+    padding: 17px;
+    border: 1px solid rgba(255,255,255,0.06);
+}
+
+.example small {
+    display: block;
+    color: #9aa79f;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.example strong {
+    font-size: 21px;
+    color: #f6c343;
+}
+
+.steps {
+    margin-top: 25px;
+}
+
+.step {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.stepNumber {
+    min-width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #f6c343;
+    color: #07130d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.step h3 {
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.step p {
+    color: #9fac a5;
+    color: #a5b1aa;
+    font-size: 14px;
+}
+
+.community {
+    text-align: center;
+    background:
+        radial-gradient(circle at center, rgba(246,195,67,0.12), transparent 60%),
+        #0b1c13;
+}
+
+.communityIcon {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.community h2 {
+    font-size: 30px;
+}
+
+.community p {
+    color: #bac6bf;
+    margin-bottom: 25px;
+}
+
+.telegramButton {
+    background: #229ed9;
+    color: #ffffff;
+}
+
+.whatsappButton {
+    background: #25d366;
+    color: #ffffff;
+}
+
+.final {
+    padding: 50px 20px;
+    background: #07130d;
+    text-align: center;
+}
+
+.final h2 {
+    font-size: 26px;
+}
+
+.final p {
+    color: #aebbb4;
+    margin-bottom: 22px;
+}
+
+.disclaimer {
+    margin-top: 30px;
+    color: #69766f;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.footer {
+    text-align: center;
+    padding: 25px 20px;
+    background: #050d08;
+    color: #66736b;
+    font-size: 12px;
+}
+
+.hidden {
+    display: none;
+}
+
+.fadeIn {
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+<section class="hero">
+
+    <div class="logo">
+        <span>GHANA INVESTMENT EDUCATION</span>
+    </div>
+
+    <div class="badge">
+        Think differently about your money
+    </div>
+
+    <h1>
+        What if your money could have been <strong>working for you?</strong>
+    </h1>
+
+    <p class="heroText">
+        You do not always need thousands of cedis to start learning about investing in Ghanaian companies.
+    </p>
+
+    <div class="highlight">
+
+        <div class="highlightTitle">
+            Think about this
+        </div>
+
+        <div class="highlightText">
+            If GHS 50 had experienced a 75% increase, it would become GHS 87.50.
+        </div>
+
+    </div>
+
+    <a href="#numbers" class="primaryButton">
+        SHOW ME THE NUMBERS
+    </a>
+
+    <a href="#learn" class="secondaryButton">
+        I WANT TO UNDERSTAND INVESTING
+    </a>
 
 </section>
 
 
-<!-- SCREEN 5 -->
+<section class="section" id="numbers">
 
-<section class="screen" id="screen5">
+    <div class="sectionTag">
+        The numbers
+    </div>
 
-<div class="container">
+    <h2>
+        What could different amounts become?
+    </h2>
 
-<div class="tag">
-YOUR NEXT STEP
-</div>
+    <p class="sectionText">
+        Here is a simple illustration using a hypothetical 75% increase. The purpose is to show how percentage growth affects different amounts.
+    </p>
 
-<h2>
-DISCOVER WHAT IS
-<span>HAPPENING IN THE MARKET.</span>
-</h2>
+    <div class="exampleGrid">
 
-<p class="description">
-Continue learning about stocks, companies and the Ghanaian investment market.
-</p>
+        <div class="example">
+            <small>Starting with</small>
+            <strong>GHS 50</strong>
+        </div>
 
-<div class="vault">
+        <div class="example">
+            <small>After 75% growth</small>
+            <strong>GHS 87.50</strong>
+        </div>
 
-<div class="vault_icon">
-🔐
-</div>
+        <div class="example">
+            <small>Starting with</small>
+            <strong>GHS 100</strong>
+        </div>
 
-<h3>
-YOUR INVESTMENT COMMUNITY
-</h3>
+        <div class="example">
+            <small>After 75% growth</small>
+            <strong>GHS 175</strong>
+        </div>
 
-<p class="description">
-Join the Telegram community and continue the conversation.
-</p>
+        <div class="example">
+            <small>Starting with</small>
+            <strong>GHS 500</strong>
+        </div><div class="example">
+            <small>After 75% growth</small>
+            <strong>GHS 875</strong>
+        </div>
 
-</div>
+        <div class="example">
+            <small>Starting with</small>
+            <strong>GHS 1,000</strong>
+        </div>
 
-<a
-href="https://t.me/SNYstocksvault"
-target="_blank"
-class="telegram_button"
->
-JOIN THE COMMUNITY →
-</a>
+        <div class="example">
+            <small>After 75% growth</small>
+            <strong>GHS 1,750</strong>
+        </div>
 
-<p class="small">
-You will discover S.N.Y Stocks Vault inside the community.
-</p>
+        <div class="example">
+            <small>Starting with</small>
+            <strong>GHS 5,000</strong>
+        </div>
 
-<button class="secondary_button" onclick="nextScreen()">
-I WANT PERSONAL GUIDANCE
-</button>
+        <div class="example">
+            <small>After 75% growth</small>
+            <strong>GHS 8,750</strong>
+        </div>
 
-</div>
+    </div>
+
+    <p class="note">
+        Important: These figures are mathematical illustrations based on a hypothetical 75% increase. Actual investment returns can be higher or lower, and losses are possible.
+    </p>
+
+</section>
+
+
+<section class="section dark">
+
+    <div class="sectionTag">
+        Try it yourself
+    </div>
+
+    <h2>
+        How much would a 75% increase add to your money?
+    </h2>
+
+    <p class="sectionText">
+        Enter any amount below.
+    </p>
+
+    <div class="calculator">
+
+        <label for="amount">
+            Starting amount in Ghana Cedis
+        </label>
+
+        <input
+            type="number"
+            id="amount"
+            placeholder="Example: 500"
+            min="1"
+        >
+
+        <button class="primaryButton" onclick="calculateGrowth()">
+            CALCULATE
+        </button>
+
+        <div class="result" id="result">
+
+            <div class="resultLabel">
+                Starting amount
+            </div>
+
+            <div class="resultAmount" id="startingAmount">
+                GHS 0
+            </div>
+
+            <div class="resultLabel">
+                Amount after a hypothetical 75% increase
+            </div>
+
+            <div class="resultAmount" id="finalAmount">
+                GHS 0
+            </div>
+
+            <div class="resultGain">
+                Illustrative gain: GHS 0
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
 
-<!-- SCREEN 6 -->
+<section class="section" id="learn">
 
-<section class="screen" id="screen6">
+    <div class="sectionTag">
+        The bigger picture
+    </div>
 
-<div class="container">
+    <h2>
+        Investing is more than buying a stock.
+    </h2>
 
-<div class="tag">
-PERSONAL GUIDANCE
-</div>
+    <p class="sectionText">
+        The important question is not simply which company has a low share price. You need to understand the business, its financial performance, growth, valuation and the risks involved.
+    </p>
 
-<h2>
-HAVE QUESTIONS
-<span>ABOUT INVESTING?</span>
-</h2>
+    <div class="steps">
 
-<p class="description">
-If you want to discuss your investment questions privately, speak with us directly on WhatsApp.
-</p>
+        <div class="step">
 
-<a
-href="https://wa.me/233532846270?text=Hi%2C%20I%20came%20from%20the%20investment%20funnel%20and%20I%20would%20like%20to%20discuss%20investing."
-target="_blank"
-class="whatsapp_button"
->
-💬 CHAT ON WHATSAPP
-</a>
+            <div class="stepNumber">1</div>
 
-<a
-href="https://t.me/SNYstocksvault"
-target="_blank"
-class="telegram_button"
->
-JOIN THE TELEGRAM COMMUNITY
-</a>
+            <div>
+                <h3>Learn the market</h3>
 
-<p class="disclaimer">
-Investment involves risk. This page is for educational purposes and does not guarantee investment returns.
-</p>
+                <p>
+                    Understand how the Ghana Stock Exchange and listed companies work.
+                </p>
+            </div>
 
-</div>
+        </div>
+
+
+        <div class="step">
+
+            <div class="stepNumber">2</div>
+
+            <div>
+                <h3>Study companies</h3>
+
+                <p>
+                    Look at revenue, earnings, debt, margins, growth and other important financial information.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="stepNumber">3</div>
+
+            <div>
+                <h3>Understand valuation</h3>
+
+                <p>
+                    Learn concepts such as EPS and P/E instead of buying simply because a share looks cheap.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="stepNumber">4</div>
+
+            <div>
+                <h3>Build patiently</h3>
+
+                <p>
+                    Investing is generally a long term process. You do not need to chase every price movement.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
+
+
+<section class="section community">
+
+    <div class="communityIcon">
+        📈
+    </div>
+
+    <div class="sectionTag">
+        Your next step
+    </div>
+
+    <h2>
+        Want to learn with other investors?
+    </h2><p>
+        Join our Telegram investment community and continue learning about Ghanaian stocks, companies, market opportunities and investment concepts.
+    </p>
+
+    <a
+        href="https://t.me/SNYstocksvault"
+        target="_blank"
+        class="primaryButton telegramButton"
+    >
+        JOIN THE INVESTMENT COMMUNITY
+    </a>
+
+    <p class="note">
+        You will discover S.N.Y Stocks Vault inside the community.
+    </p>
+
+</section>
+
+
+<section class="final">
+
+    <div class="sectionTag">
+        Need personal help?
+    </div>
+
+    <h2>
+        Have questions about investing?
+    </h2>
+
+    <p>
+        If you want to discuss your investment questions privately, you can contact me directly on WhatsApp.
+    </p>
+
+    <a
+        href="https://wa.me/233532846270?text=Hello%20Byte%20Boss%2C%20I%20came%20through%20your%20investment%20funnel%20and%20I%20would%20like%20to%20learn%20more%20about%20investing."
+        target="_blank"
+        class="primaryButton whatsappButton"
+    >
+        CHAT WITH ME ON WHATSAPP
+    </a>
+
+    <div class="disclaimer">
+        Investment involves risk. This page is for educational and informational purposes only. Past performance or hypothetical examples do not guarantee future results. Always conduct your own research and consider your personal financial circumstances before investing.
+    </div>
+
+</section>
+
+
+<div class="footer">
+
+    S.N.Y Stocks Vault
+
+    <br>
+
+    Learn • Save • Invest • Build
+
+</div>
+
+</div>
 
 
 <script>
 
-let currentScreen = 1;
+function calculateGrowth() {
 
-function nextScreen() {
+    const amountInput = document.getElementById("amount");
 
-    if (currentScreen < 6) {
+    const result = document.getElementById("result");
 
-        currentScreen++;
+    const startingAmount = document.getElementById("startingAmount");
 
-        document.querySelectorAll(".screen").forEach(function(screen) {
+    const finalAmount = document.getElementById("finalAmount");
 
-            screen.classList.remove("active");
+    const amount = Number(amountInput.value);
 
-        });
+    if (!amount || amount <= 0) {
 
-        document
-        .getElementById("screen" + currentScreen)
-        .classList.add("active");
+        alert("Please enter a valid amount.");
 
-        document
-        .getElementById("progress")
-        .style.width = ((currentScreen / 6) * 100) + "%";
-
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-
+        return;
     }
 
-}
+    const gain = amount * 0.75;
 
+    const total = amount + gain;
 
-function calculate(amount, button) {
-
-    document.querySelectorAll(".amount").forEach(function(item) {
-
-        item.classList.remove("selected");
-
-    });
-
-    button.classList.add("selected");
-
-
-    const increase = 0.75;
-
-    const profit = amount * increase;
-
-    const finalValue = amount + profit;
-
-
-    document.getElementById("result").textContent =
-        "GHS " +
-        finalValue.toLocaleString("en GH", {
+    startingAmount.textContent =
+        "GHS " + amount.toLocaleString("en-GH", {
             minimumFractionDigits: 2,
             maximumFractionDigits: 2
         });
 
-
-    document.getElementById("profit").textContent =
-        "Potential increase: GHS " +
-        profit.toLocaleString("en GH", {
+    finalAmount.textContent =
+        "GHS " + total.toLocaleString("en-GH", {
             minimumFractionDigits: 2,
             maximumFractionDigits: 2
         });
 
+    result.querySelector(".resultGain").textContent =
+        "Illustrative gain: GHS " +
+        gain.toLocaleString("en-GH", {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
+
+    result.style.display = "block";
+
+    result.classList.remove("fadeIn");
+
+    void result.offsetWidth;
+
+    result.classList.add("fadeIn");
 }
 
 </script>
 
 </body>
-  </html>
+</html>
